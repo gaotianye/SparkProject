@@ -13,7 +13,7 @@ public class TaskDAOTest {
 	
 	public static void main(String[] args) {
 		ITaskDAO taskDAO = DAOFactory.getTaskDAO();
-		Task task = taskDAO.findById(2);
+		Task task = taskDAO.findById(1);
 		System.out.println(task.getTaskName());  
 	}
 	
