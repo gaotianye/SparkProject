@@ -31,8 +31,8 @@ public class JdbcCRUD {
 
 	public static void main(String[] args) {
 //		insert();
-		update();
-//		delete();
+		update();//TODO 
+//		delete();//TODO
 //		select();
 //		preparedStatement();
 	}
@@ -87,7 +87,7 @@ public class JdbcCRUD {
 			// 插入一条数据
 			// Statement.executeUpdate()方法，就可以用来执行insert、update、delete语句
 			// 返回类型是个int值，也就是SQL语句影响的行数
-			String sql = "insert into test_user(name,age) values('孙琦',31)";  
+			String sql = "insert into test_user(name,age) values('王燕忠',32)";  
 			int rtn = stmt.executeUpdate(sql);    
 			
 			System.out.println("SQL语句影响了【" + rtn + "】行。");  
@@ -124,9 +124,8 @@ public class JdbcCRUD {
 					"123456"); 
 			stmt = conn.createStatement();
 			
-			String sql = "update test_user set age=22 where name='李四';";
+			String sql = "update test_user set age='22' where name='李四';";
 			int rtn = stmt.executeUpdate(sql);
-			
 			System.out.println("SQL语句影响了【" + rtn + "】行。");  
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -270,7 +269,7 @@ public class JdbcCRUD {
 			pstmt = conn.prepareStatement(sql);
 			
 			// 第二个，必须调用PreparedStatement的setX()系列方法，对指定的占位符设置实际的值
-			pstmt.setString(1, "李四");  
+			pstmt.setString(1, "张爽");  
 			pstmt.setInt(2, 26);  
 			
 			// 第三个，执行SQL语句时，直接使用executeUpdate()即可，不用传入任何参数
